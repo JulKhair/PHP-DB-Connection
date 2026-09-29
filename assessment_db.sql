@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2026 at 04:25 AM
+-- Generation Time: Sep 29, 2026 at 04:42 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,6 +39,16 @@ CREATE TABLE `bookings` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`booking_id`, `client_id`, `service_id`, `booking_date`, `hours`, `hourly_rate_snapshot`, `total_cost`, `status`, `created_at`) VALUES
+(1, 4, 2, '2026-09-29', 6, 600.00, 3600.00, 'PENDING', '2026-09-29 02:35:05'),
+(2, 3, 1, '2026-09-30', 3, 500.00, 1500.00, 'PENDING', '2026-09-29 02:35:44'),
+(3, 1, 3, '2026-10-10', 8, 450.00, 3600.00, 'PENDING', '2026-09-29 02:36:36'),
+(4, 2, 3, '2026-10-11', 8, 450.00, 3600.00, 'PENDING', '2026-09-29 02:37:08');
+
 -- --------------------------------------------------------
 
 --
@@ -67,6 +77,16 @@ CREATE TABLE `clients` (
   `address` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `clients`
+--
+
+INSERT INTO `clients` (`client_id`, `full_name`, `email`, `phone`, `address`, `created_at`) VALUES
+(1, 'Velscania Tempest', 'v.tempest@email.com', '09273252554', 'Tempest District, Arnhem', '2026-09-29 02:26:14'),
+(2, 'Renvera Kaslana', 'r.kaslana@email.com', '09458435946', 'St. Freya Academy, Oosterbeek', '2026-09-29 02:27:03'),
+(3, 'Salonir Schariac', 's.schariac@email.com', '09628854581', 'Anti-Entropy Labs, Valkenswaard', '2026-09-29 02:28:01'),
+(4, 'Xenva Apocalypse', 'x.apocalypse@email.com', '09954233172', 'Apocalypse Household, Chambois', '2026-09-29 02:33:20');
 
 -- --------------------------------------------------------
 
@@ -176,7 +196,7 @@ ALTER TABLE `tools`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `booking_tools`
@@ -188,7 +208,7 @@ ALTER TABLE `booking_tools`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `payments`
