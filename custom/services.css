@@ -1,0 +1,95 @@
+/* ========================= SEPARATION SERVICES LIST ========================= */
+
+.services-containerS1 {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-tableS1 {
+  background-color: var(--color-surface);
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--color-text);
+  font-size: 14px;
+  box-shadow: 0 3px 10px rgba(56, 36, 13, 0.06);
+}
+
+.service-tableS1 th {
+  padding: 12px 16px;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  text-align: left;
+  font-weight: 600;
+}
+
+.service-tableS1 td {
+  padding: 12px 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.service-tableS1 tbody tr:hover {
+  background-color: var(--color-background);
+}
+
+.service-tableS1 .table-action {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.service-tableS1 .table-action:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ========================= SEPARATION SERVICE EDIT ========================= */
+
+.service-form-containerS2 {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.service-formS2 {
+  background-color: var(--color-surface);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 3px 10px rgba(56, 36, 13, 0.06);
+}
+
+.service-formS2 .form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.service-formS2 .form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.service-formS2 .form-group input,
+.service-formS2 .form-group select,
+.service-formS2 .form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: 14px;
+  font-family: var(--font-main);
+}
+
+.service-formS2 .form-group textarea {
+  resize: vertical;
+}
+
+.service-formS2 .form-group input:focus,
+.service-formS2 .form-group select:focus,
+.service-formS2 .form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(192, 88, 0, 0.12);
+}

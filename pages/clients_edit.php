@@ -28,27 +28,75 @@ if (isset($_POST['update'])) {
 ?>
 <!doctype html>
 <html>
-<head><meta charset="utf-8"><title>Edit Client</title></head>
+<head>
+  <meta charset="utf-8">
+  <title>Edit Client</title>
+
+  <link rel="stylesheet" href="../custom/clients.css">
+  <link rel="stylesheet" href="../custom/style.css">
+</head>
+
 <body>
+
 <?php include "../nav.php"; ?>
- 
-<h2>Edit Client</h2>
-<p style="color:red;"><?php echo $message; ?></p>
- 
-<form method="post">
-  <label>Full Name*</label><br>
-  <input type="text" name="full_name" value="<?php echo $client['full_name']; ?>"><br><br>
- 
-  <label>Email*</label><br>
-  <input type="text" name="email" value="<?php echo $client['email']; ?>"><br><br>
- 
-  <label>Phone</label><br>
-  <input type="text" name="phone" value="<?php echo $client['phone']; ?>"><br><br>
- 
-  <label>Address</label><br>
-  <input type="text" name="address" value="<?php echo $client['address']; ?>"><br><br>
- 
-  <button type="submit" name="update">Update</button>
-</form>
+
+<main class="main-content">
+  <div class="form-containerC2">
+
+    <div class="page-header">
+      <h2 class="page-title">Edit Client</h2>
+    </div>
+
+    <p class="form-messageC2">
+      <?php echo $message; ?>
+    </p>
+
+    <form class="client-formC2" method="post">
+
+      <div class="form-groupC2">
+        <label for="full_name">Full Name*</label>
+        <input
+          type="text"
+          name="full_name"
+          id="full_name"
+          value="<?php echo $client['full_name']; ?>">
+      </div>
+
+      <div class="form-groupC2">
+        <label for="email">Email*</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          value="<?php echo $client['email']; ?>">
+      </div>
+
+      <div class="form-groupC2">
+        <label for="phone">Phone</label>
+        <input
+          type="text"
+          name="phone"
+          id="phone"
+          value="<?php echo $client['phone']; ?>">
+      </div>
+
+      <div class="form-groupC2">
+        <label for="address">Address</label>
+        <input
+          type="text"
+          name="address"
+          id="address"
+          value="<?php echo $client['address']; ?>">
+      </div>
+
+      <button type="submit" name="update" class="btn btn-primary">
+        Update
+      </button>
+
+    </form>
+
+  </div>
+</main>
+
 </body>
 </html>

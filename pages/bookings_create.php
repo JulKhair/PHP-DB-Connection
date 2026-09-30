@@ -25,36 +25,80 @@ if (isset($_POST['create'])) {
 ?>
 <!doctype html>
 <html>
-<head><meta charset="utf-8"><title>Create Booking</title></head>
+<head>
+  <meta charset="utf-8">
+  <title>Create Booking</title>
+
+  <link rel="stylesheet" href="../custom/bookings.css">
+  <link rel="stylesheet" href="../custom/style.css">
+</head>
+
 <body>
+
 <?php include "../nav.php"; ?>
- 
-<h2>Create Booking</h2>
- 
-<form method="post">
-  <label>Client</label><br>
-  <select name="client_id">
-    <?php while($c = mysqli_fetch_assoc($clients)) { ?>
-      <option value="<?php echo $c['client_id']; ?>"><?php echo $c['full_name']; ?></option>
-    <?php } ?>
-  </select><br><br>
- 
-  <label>Service</label><br>
-  <select name="service_id">
-    <?php while($s = mysqli_fetch_assoc($services)) { ?>
-      <option value="<?php echo $s['service_id']; ?>">
-        <?php echo $s['service_name']; ?> (₱<?php echo number_format($s['hourly_rate'],2); ?>/hr)
-      </option>
-    <?php } ?>
-  </select><br><br>
- 
-  <label>Date</label><br>
-  <input type="date" name="booking_date"><br><br>
- 
-  <label>Hours</label><br>
-  <input type="number" name="hours" min="1" value="1"><br><br>
- 
-  <button type="submit" name="create">Create Booking</button>
-</form>
+
+<main class="main-content">
+  <div class="booking-form-containerB1">
+
+    <div class="page-header">
+      <h2 class="page-title">Create Booking</h2>
+    </div>
+
+    <form class="booking-formB1" method="post">
+
+      <div class="form-group">
+        <label for="client_id">Client</label>
+
+        <select name="client_id" id="client_id">
+          <?php while($c = mysqli_fetch_assoc($clients)) { ?>
+            <option value="<?php echo $c['client_id']; ?>">
+              <?php echo $c['full_name']; ?>
+            </option>
+          <?php } ?>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="service_id">Service</label>
+
+        <select name="service_id" id="service_id">
+          <?php while($s = mysqli_fetch_assoc($services)) { ?>
+            <option value="<?php echo $s['service_id']; ?>">
+              <?php echo $s['service_name']; ?>
+              (₱<?php echo number_format($s['hourly_rate'],2); ?>/hr)
+            </option>
+          <?php } ?>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="booking_date">Date</label>
+
+        <input
+          type="date"
+          name="booking_date"
+          id="booking_date">
+      </div>
+
+      <div class="form-group">
+        <label for="hours">Hours</label>
+
+        <input
+          type="number"
+          name="hours"
+          id="hours"
+          min="1"
+          value="1">
+      </div>
+
+      <button type="submit" name="create" class="btn btn-primary">
+        Create Booking
+      </button>
+
+    </form>
+
+  </div>
+</main>
+
 </body>
 </html>

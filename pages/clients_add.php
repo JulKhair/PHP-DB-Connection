@@ -23,26 +23,54 @@ if (isset($_POST['save'])) {
 <!doctype html>
 <html>
 <head><meta charset="utf-8"><title>Add Client</title></head>
+<link rel="stylesheet" href="../custom/clients.css">
+<link rel="stylesheet" href="../custom/style.css">
 <body>
 <?php include "../nav.php"; ?>
  
-<h2>Add Client</h2>
-<p style="color:red;"><?php echo $message; ?></p>
- 
-<form method="post">
-  <label>Full Name*</label><br>
-  <input type="text" name="full_name"><br><br>
- 
-  <label>Email*</label><br>
-  <input type="text" name="email"><br><br>
- 
-  <label>Phone</label><br>
-  <input type="text" name="phone"><br><br>
- 
-  <label>Address</label><br>
-  <input type="text" name="address"><br><br>
- 
-  <button type="submit" name="save">Save</button>
-</form>
+<main class="container py-4">
+
+<main class="main-content">
+  <div class="form-containerC1">
+
+    <div class="page-headerC1">
+      <h2 class="page-title">Add Client</h2>
+    </div>
+
+    <p class="form-messageC1">
+      <?php echo $message; ?>
+    </p>
+
+    <form class="client-formC1" method="post">
+
+      <div class="form-groupC1">
+        <label for="full_name">Full Name*</label>
+        <input type="text" name="full_name" id="full_name">
+      </div>
+
+      <div class="form-groupC1">
+        <label for="email">Email*</label>
+        <input type="text" name="email" id="email">
+      </div>
+
+      <div class="form-groupC1">
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone">
+      </div>
+
+      <div class="form-groupC1">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address">
+      </div>
+
+      <button type="submit" name="save" class="btn btn-primaryC1">
+        Save
+      </button>
+
+    </form>
+
+  </div>
+</main>
+
 </body>
 </html>
