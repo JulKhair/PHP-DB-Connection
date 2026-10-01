@@ -1,5 +1,14 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["user_id"])) {
+    header("Location: ../login.php");
+    exit();
+}
+
 include "../db.php";
+
+
  
 $sql = "
 SELECT b.*, c.full_name AS client_name, s.service_name
@@ -69,12 +78,15 @@ $result = mysqli_query($conn, $sql);
               <td><?php echo $b['status']; ?></td>
 
               <td>
-                <a
-                  href="payment_process.php?booking_id=<?php echo $b['booking_id']; ?>"
-                  class="table-action"
-                >
-                  Process Payment
-                </a>
+    <a href="payment_process.php?booking_id=<?php echo $b["booking_id"]; ?>">
+        Process Payment
+    </a>
+    
+    |
+
+    <a href="booking_delete.php?booking_id=<?php echo $b["booking_id"]; ?>">
+        Delete
+    </a>
               </td>
             </tr>
 
